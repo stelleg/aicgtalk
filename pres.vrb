@@ -1,0 +1,8 @@
+\frametitle{In Progress}
+\begin{itemize}
+\item Reductions
+\item SSA Theory Extensions
+\item Better JIT Utilization
+\item Explicit Memory Movement
+\item Precompilation
+\end{itemize}
