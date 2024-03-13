@@ -1,8 +1,7 @@
-\frametitle{In Progress}
-\begin{itemize}
-\item Reductions
-\item SSA Theory Extensions
-\item Better JIT Utilization
-\item Explicit Memory Movement
-\item Precompilation
-\end{itemize}
+\frametitle{Current Software}
+\begin{tikzpicture} [node distance = 8cm, auto]
+ \node [rectangle, draw=Yellow, text width=8em] (in) {Source program (e.g.)
+ Fortran};
+ \node [right of=in, rectangle, draw=Yellow, text width=8em] (out) {Output program};
+ \path [draw=Green, -latex'] (in) -> node {Compiler} (out) ;
+\end{tikzpicture}

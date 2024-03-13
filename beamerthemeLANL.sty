@@ -23,18 +23,25 @@
 \ProvidesPackage{beamerthemeLANL}
 
 % Load packages we will need.
-\usepackage{helvet}
+%\usepackage{helvet}
+\usepackage{roboto}
 \usepackage{graphicx}
+\usepackage{eso-pic}
 
 % Define a few colors.
-\definecolor{LANLYellow}{RGB}{241,155,32}
-\definecolor{LANLDarkBlue}{RGB}{0,73,130}
+\definecolor{LANLDarkBlue}{RGB}{10,25,140}
 
 \newcommand{\classColor}{\color{black}}
 
 % Add commands to display LA-UR (or similar ID) on title page.
-\newcommand{\markLAUR}{LA-UR-22-21898}
+\newcommand{\markLAUR}{}
 \newcommand{\LAUR}[1]{\renewcommand{\markLAUR}{{#1}}}
+
+\newcommand\AtPagemyUpperLeft[1]{\AtPageLowerLeft{%
+\put(\LenToUnit{0.9\paperwidth},\LenToUnit{0.87\paperheight}){#1}}}
+\AddToShipoutPictureFG{
+  \AtPagemyUpperLeft{{\includegraphics[width=1cm,keepaspectratio]{lanl-logo.png}}}
+}%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -92,8 +99,8 @@
 \setbeamerfont{headline}{size=\tiny}
 \setbeamerfont{footline}{size=\tiny}
 
-\setbeamercolor{titlelike}{fg=black}
-\setbeamercolor{page number in head/foot}{fg=LANLYellow}
+\setbeamercolor{titlelike}{fg=LANLDarkBlue}
+\setbeamercolor{page number in head/foot}{fg=LANLDarkBlue}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -122,13 +129,13 @@
 % Now we set up the basic page layout.
 
 % Set background image for all slides.
-\setbeamertemplate{background canvas}{%
-    \includegraphics[width=\paperwidth,height=\paperheight,
-        keepaspectratio]{LANLBackground}}
+%\setbeamertemplate{background canvas}{%
+%    \includegraphics[width=\paperwidth,height=\paperheight,
+%        keepaspectratio]{LANLBackground}}
 
 % Set up the head of the page.
 \defbeamertemplate*{headline}{}{%
-    \vspace{1.5ex}%
+%    \vspace{1.5ex}%
     \begin{beamercolorbox}[wd=\paperwidth]{}%
         \usebeamerfont*{headline}%
         \hspace{\stretch{1}}%
@@ -154,7 +161,7 @@
             \fi%
         }
     \end{beamercolorbox} 
-    \vspace{4.5ex}
+    %\vspace{4.5ex}
     \begin{beamercolorbox}[wd=\paperwidth]{}%
         \hspace{\stretch{1}}%
         \raisebox{0.5ex}{%
@@ -163,7 +170,7 @@
             for the U.S. Department of Energy's NNSA}}%
         \hspace{\stretch{1}}
     \end{beamercolorbox} 
-    \vspace{1.0ex}
+%    \vspace{1.0ex}
 }
 
 
@@ -195,9 +202,9 @@
     {\raise0.4ex\hbox{\vrule width 0.6ex height 0.6ex}}
 \setbeamertemplate{itemize subitem}{--}
 \setbeamertemplate{itemize subsubitem}[circle]
-\setbeamercolor{itemize item}{fg=LANLYellow}
-\setbeamercolor{itemize subitem}{fg=LANLYellow}
-\setbeamercolor{itemize subsubitem}{fg=LANLYellow}
+\setbeamercolor{itemize item}{fg=LANLDarkBlue}
+\setbeamercolor{itemize subitem}{fg=LANLDarkBlue}
+\setbeamercolor{itemize subsubitem}{fg=LANLDarkBlue}
 \setlength{\leftmargini}{1.5em}
 \setlength{\leftmarginii}{1.5em}
 \setlength{\leftmarginiii}{1.5em}
